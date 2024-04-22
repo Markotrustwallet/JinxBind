@@ -1,0 +1,20 @@
+using System;
+using System.Linq;
+
+class LINQExample
+{
+    static void Main()
+    {
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        var query = from number in numbers
+                    where number % 2 == 0
+                    orderby number descending
+                    select number * number;
+
+        foreach (var result in query)
+        {
+            Console.WriteLine(result);
+        }
+    }
+}
